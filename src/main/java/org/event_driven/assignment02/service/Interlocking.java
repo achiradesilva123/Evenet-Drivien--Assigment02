@@ -1,4 +1,4 @@
-package org.event_driven.assignmenr02.service;
+package org.event_driven.assignment02.service;
 
 public interface Interlocking
 {
