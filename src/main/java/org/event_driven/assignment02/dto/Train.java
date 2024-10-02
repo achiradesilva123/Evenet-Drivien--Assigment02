@@ -6,6 +6,12 @@ public class Train {
     private int entryTrack;
     private int destination;
 
+    public Train(String name, int entryTrack, int destination) {
+        this.name = name;
+        this.entryTrack = entryTrack;
+        this.destination = destination;
+    }
+
     public String getName() {
         return name;
     }
