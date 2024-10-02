@@ -1,11 +1,11 @@
 package org.event_driven.assignment02.serviceImpl;
 
-import org.event_driven.assignment02.service.Interlocking;
+import org.event_driven.assignment02.service.TrainService;
 
-public class InterLockingServiceImpl implements Interlocking {
+public class TrainServiceImpl implements TrainService {
     @Override
     public void addTrain(String trainName, int entryTrackSection, int destinationTrackSection) throws IllegalArgumentException, IllegalStateException {
-
+        
     }
 
     @Override
