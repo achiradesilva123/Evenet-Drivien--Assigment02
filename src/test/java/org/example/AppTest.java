@@ -3,6 +3,8 @@ package org.example;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.event_driven.assignment02.service.TrainService;
+import org.event_driven.assignment02.serviceImpl.TrainServiceImpl;
 
 /**
  * Unit test for simple App.
@@ -10,29 +12,16 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+    public void testAddTrain() {
+        TrainService trainService = new TrainServiceImpl();
+        trainService.addTrain("Train A", 1, 3);
+        assertEquals(1, trainService.getTrain("Train A"));
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    public void testMoveTrain() {
+        TrainService trainService = new TrainServiceImpl();
+        trainService.addTrain("Train A", 1, 3);
+        trainService.moveTrains(new String[]{"Train A"});
+        assertEquals(2, trainService.getTrain("Train A"));
     }
 }

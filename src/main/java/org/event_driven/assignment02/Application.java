@@ -12,10 +12,13 @@ public class Application {
 
         TrainService trainService = new TrainServiceImpl();
 
-        TrainController controller = new TrainController(trainService);
-        controller.addTrain("Train A", 1, 3);
+        TrainController trainController = new TrainController(trainService);
+        trainController.addTrain("Train A", 1, 3);
+        trainController.addTrain("Train B", 2, 4);
+        trainController.moveTrains(new String[]{"Train A", "Train B"});
 
-//        System.out.println("Train A is currently at track section: " + controller.getTrain("Train A"));
+        System.out.println("Train A is currently at track section: " + trainController.getTrain("Train A"));
+        System.out.println("Train B is currently at track section: " + trainController.getTrain("Train B"));
 
 
     }

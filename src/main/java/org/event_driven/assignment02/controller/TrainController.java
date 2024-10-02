@@ -13,7 +13,12 @@ public class TrainController {
     public void addTrain(String trainName, int entryTrackSection, int destinationTrackSection){
         trainService.addTrain(trainName,entryTrackSection,destinationTrackSection);
     };
-    public void moveTrain(){};
+    public int moveTrains(String[] trainNames) {
+        return trainService.moveTrains(trainNames);
+    }
+    public String getSection(int trackSection) {
+        return trainService.getSection(trackSection);
+    }
     public int getTrain(String trainName){
         return trainService.getTrain(trainName);
     };
